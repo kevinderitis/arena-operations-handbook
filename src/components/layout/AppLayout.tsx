@@ -4,6 +4,7 @@ import { Menu, Search, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Sidebar } from '@/components/navigation/Sidebar';
+import { ScrollToTop } from './ScrollToTop';
 import { useSearch } from '@/components/search/SearchContext';
 import { SearchDialog } from '@/components/search/SearchDialog';
 
@@ -12,7 +13,9 @@ export function AppLayout() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
+    <>
+      <ScrollToTop />
+      <div className="flex min-h-screen flex-col bg-background text-foreground">
       <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-[1400px] items-center gap-3 px-4">
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -65,5 +68,6 @@ export function AppLayout() {
 
       <SearchDialog />
     </div>
+    </>
   );
 }
