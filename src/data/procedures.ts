@@ -1,11 +1,11 @@
-import { bed24Procedures } from '../content/bed24';
+import { bedlinkProcedures } from '../content/bedlink';
 import { spinalProcedures } from '../content/spinal';
 import { frontDeskProcedures } from '../content/front-desk';
 import { cleaningProcedures } from '../content/cleaning';
 import type { Procedure } from '../types/documentation';
 
 export const procedures: Procedure[] = [
-  ...bed24Procedures,
+  ...bedlinkProcedures,
   ...spinalProcedures,
   ...frontDeskProcedures,
   ...cleaningProcedures,

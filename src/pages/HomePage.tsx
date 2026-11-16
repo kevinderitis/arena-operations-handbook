@@ -13,7 +13,7 @@ const dailyShortcuts = [
   'fd-guest-check-in',
   'fd-guest-check-out',
   'cl-morning-preparation',
-  'bed24-importing-reservations',
+  'spinal-importing-reservations',
 ];
 
 export default function HomePage() {

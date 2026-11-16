@@ -2,10 +2,10 @@ import type { NavGroup, DepartmentMeta } from '../types/documentation';
 
 export const departments: DepartmentMeta[] = [
   {
-    id: 'bed24',
-    label: 'BED24',
-    path: 'bed24',
-    description: 'Reservation import, availability, rates and guest messaging.',
+    id: 'bedlink',
+    label: 'BEDLINK',
+    path: 'bedlink',
+    description: 'Reservations, room rates and guest messaging via Bedlink.',
     icon: 'BedDouble',
   },
   {
@@ -33,15 +33,13 @@ export const departments: DepartmentMeta[] = [
 
 export const navigation: NavGroup[] = [
   {
-    id: 'bed24',
-    title: 'BED24',
-    department: 'bed24',
+    id: 'bedlink',
+    title: 'BEDLINK',
+    department: 'bedlink',
     items: [
-      { id: 'bed24-importing-reservations', title: 'Importing Reservations into Spinal', slug: 'importing-reservations', department: 'bed24' },
-      { id: 'bed24-extending-reservations', title: 'Extending Guest Reservations', slug: 'extending-guest-reservations', department: 'bed24' },
-      { id: 'bed24-checking-rates', title: 'Checking Room Rates', slug: 'checking-room-rates', department: 'bed24' },
-      { id: 'bed24-managing-availability', title: 'Managing Room Availability', slug: 'managing-room-availability', department: 'bed24' },
-      { id: 'bed24-responding-messages', title: 'Responding to Guest Messages', slug: 'responding-to-guest-messages', department: 'bed24' },
+      { id: 'bedlink-checking-reservations', title: 'Checking reservations', slug: 'checking-reservations', department: 'bedlink' },
+      { id: 'bedlink-checking-room-rates', title: 'Checking room rates', slug: 'checking-room-rates', department: 'bedlink' },
+      { id: 'bedlink-responding-guest-messages', title: 'Responding to guest messages', slug: 'responding-to-guest-messages', department: 'bedlink' },
     ],
   },
   {
@@ -49,10 +47,11 @@ export const navigation: NavGroup[] = [
     title: 'SPINAL',
     department: 'spinal',
     items: [
-      { id: 'spinal-dashboard-overview', title: 'Spinal Dashboard Overview', slug: 'spinal-dashboard-overview', department: 'spinal' },
+      { id: 'spinal-dashboard-overview', title: 'Spinal dashboard overview', slug: 'spinal-dashboard-overview', department: 'spinal' },
+      { id: 'spinal-importing-reservations', title: 'Importing reservations into Spinal', slug: 'importing-reservations-into-spinal', department: 'spinal' },
+      { id: 'spinal-extending-reservations', title: 'Extending guest reservations', slug: 'extending-guest-reservations', department: 'spinal' },
       { id: 'spinal-daily-checkins-checkouts', title: 'Managing Daily Check-ins & Check-outs', slug: 'daily-check-ins-check-outs', department: 'spinal' },
       { id: 'spinal-managing-views', title: 'Managing Views & Reservation Filters', slug: 'managing-views-reservation-filters', department: 'spinal' },
-      { id: 'spinal-understanding-reservations', title: 'Understanding Reservations & Customer Profiles', slug: 'understanding-reservations-customer-profiles', department: 'spinal' },
     ],
   },
   {
@@ -60,14 +59,13 @@ export const navigation: NavGroup[] = [
     title: 'FRONT DESK',
     department: 'front-desk',
     items: [
-      { id: 'fd-guest-check-in', title: 'Guest Check-in Procedure', slug: 'guest-check-in', department: 'front-desk' },
-      { id: 'fd-guest-check-out', title: 'Guest Check-out & Early Check-out', slug: 'guest-check-out-early-check-out', department: 'front-desk' },
-      { id: 'fd-stripe-payment-links', title: 'Creating Stripe Payment Links', slug: 'creating-stripe-payment-links', department: 'front-desk' },
-      { id: 'fd-guest-profiles-contracts-keys', title: 'Managing Guest Profiles, Contracts & Keys', slug: 'managing-guest-profiles-contracts-keys', department: 'front-desk' },
-      { id: 'fd-communication-no-shows', title: 'Managing Communication Channels & No-shows', slug: 'managing-communication-channels-no-shows', department: 'front-desk' },
-      { id: 'fd-renting-motorbikes', title: 'Renting Motorbikes to Guests', slug: 'renting-motorbikes-to-guests', department: 'front-desk' },
-      { id: 'fd-managing-payment-cards', title: 'Managing Payment Cards', slug: 'managing-payment-cards', department: 'front-desk' },
-      { id: 'fd-purchase-vouchers-cash', title: 'Managing Purchase Vouchers & Cash', slug: 'managing-purchase-vouchers-cash', department: 'front-desk' },
+      { id: 'fd-guest-check-in', title: 'Guest check in procedure', slug: 'guest-check-in', department: 'front-desk' },
+      { id: 'fd-guest-check-out', title: 'Guest check out and early check out', slug: 'guest-check-out-early-check-out', department: 'front-desk' },
+      { id: 'fd-stripe-payment-links', title: 'Creating stripe Payment links', slug: 'creating-stripe-payment-links', department: 'front-desk' },
+      { id: 'fd-guest-profiles-contracts-keys', title: 'Managing Guest profiles, contracts and keys', slug: 'managing-guest-profiles-contracts-keys', department: 'front-desk' },
+      { id: 'fd-renting-motorbikes', title: 'Renting motorbikes to guests', slug: 'renting-motorbikes-to-guests', department: 'front-desk' },
+      { id: 'fd-managing-payment-cards', title: 'Managing payment cards', slug: 'managing-payment-cards', department: 'front-desk' },
+      { id: 'fd-purchase-vouchers-cash', title: 'Managing purchase vouchers and cash', slug: 'managing-purchase-vouchers-cash', department: 'front-desk' },
     ],
   },
   {
@@ -75,8 +73,8 @@ export const navigation: NavGroup[] = [
     title: 'CLEANING',
     department: 'cleaning',
     items: [
-      { id: 'cl-room-cleaning-turnover', title: 'Room Cleaning & Check-out Turnover', slug: 'room-cleaning-check-out-turnover', department: 'cleaning' },
-      { id: 'cl-morning-preparation', title: 'Morning Hostel Preparation', slug: 'morning-hostel-preparation', department: 'cleaning' },
+      { id: 'cl-room-cleaning-turnover', title: 'Room cleaning and checkout turnover', slug: 'room-cleaning-check-out-turnover', department: 'cleaning' },
+      { id: 'cl-morning-preparation', title: 'Morning hostel preparation', slug: 'morning-hostel-preparation', department: 'cleaning' },
     ],
   },
 ];
