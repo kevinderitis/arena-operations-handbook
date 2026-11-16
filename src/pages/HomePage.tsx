@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, ArrowRight, Clock } from 'lucide-react';
 import { departments } from '@/data/navigation';
@@ -6,7 +5,6 @@ import { procedures, procedureById } from '@/data/procedures';
 import { useSearch } from '@/components/search/SearchContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 
 const dailyShortcuts = [
   'spinal-daily-checkins-checkouts',
@@ -18,21 +16,6 @@ const dailyShortcuts = [
 
 export default function HomePage() {
   const { setOpen } = useSearch();
-  const [recent, setRecent] = useState<string[]>([]);
-
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem('recentProcedures');
-      if (raw) setRecent(JSON.parse(raw));
-    } catch {
-      /* ignore */
-    }
-  }, []);
-
-  const recentProcs = recent
-    .map((id) => procedureById(id))
-    .filter(Boolean) as typeof procedures;
-
   return (
     <div className="space-y-8">
       <section>
@@ -90,24 +73,6 @@ export default function HomePage() {
           })}
         </div>
       </section>
-
-      {recentProcs.length > 0 && (
-        <section>
-          <h2 className="mb-3 text-lg font-semibold">Recently Accessed</h2>
-          <div className="grid gap-2 sm:grid-cols-2">
-            {recentProcs.map((p) => (
-              <Link
-                key={p.id}
-                to={`/${p.department}/${p.slug}`}
-                className="flex items-center justify-between rounded-lg border bg-card px-3 py-2 text-sm hover:bg-accent"
-              >
-                <span>{p.title}</span>
-                <Badge variant="secondary" className="text-xs">{p.department}</Badge>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
 
       <section>
         <h2 className="mb-3 text-lg font-semibold">Frequently Accessed</h2>
