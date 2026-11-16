@@ -7,6 +7,7 @@ import { Sidebar } from '@/components/navigation/Sidebar';
 import { ScrollToTop } from './ScrollToTop';
 import { useSearch } from '@/components/search/SearchContext';
 import { SearchDialog } from '@/components/search/SearchDialog';
+import { AppearanceMenu } from '@/components/theme/AppearanceMenu';
 
 export function AppLayout() {
   const { setOpen } = useSearch();
@@ -39,6 +40,7 @@ export function AppLayout() {
           </Link>
 
           <div className="ml-auto flex items-center gap-2">
+            <AppearanceMenu />
             <Button
               variant="outline"
               className="hidden w-64 justify-start text-muted-foreground sm:flex"

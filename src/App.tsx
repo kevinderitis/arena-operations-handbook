@@ -3,6 +3,7 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { Toaster } from '@/components/ui/sonner';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { SearchProvider } from '@/components/search/SearchContext';
+import { ThemeProvider } from '@/components/theme/ThemeProvider';
 import HomePage from '@/pages/HomePage';
 import DepartmentPage from '@/pages/DepartmentPage';
 import ProcedurePage from '@/pages/ProcedurePage';
@@ -11,7 +12,8 @@ import NotFoundPage from '@/pages/NotFoundPage';
 export default function App() {
   return (
     <BrowserRouter>
-      <SearchProvider>
+      <ThemeProvider>
+        <SearchProvider>
         <TooltipProvider>
           <Routes>
             <Route element={<AppLayout />}>
@@ -25,6 +27,7 @@ export default function App() {
           <Toaster />
         </TooltipProvider>
       </SearchProvider>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }
