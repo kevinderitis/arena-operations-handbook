@@ -1,38 +1,86 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
 export type ThemeMode = 'light' | 'dark';
-export type ThemeColor = 'teal' | 'blue' | 'violet' | 'orange' | 'rose' | 'green';
+export type ThemeColor = 'neutral' | 'teal' | 'blue' | 'violet' | 'orange' | 'rose' | 'green';
 
 interface Preset {
   light: Record<string, string>;
   dark: Record<string, string>;
 }
 
+function makePreset(H: number, C: number): Preset {
+  const c = (k: number) => (C * k).toFixed(3);
+  const h = H;
+  const primary = `oklch(0.5 ${c(1)} ${h})`;
+  const primaryDark = `oklch(0.7 ${c(0.85)} ${h})`;
+  return {
+    light: {
+      '--background': `oklch(0.97 ${c(0.15)} ${h})`,
+      '--foreground': `oklch(0.2 ${c(0.3)} ${h})`,
+      '--card': `oklch(0.995 ${c(0.08)} ${h})`,
+      '--card-foreground': `oklch(0.2 ${c(0.3)} ${h})`,
+      '--popover': `oklch(0.995 ${c(0.08)} ${h})`,
+      '--popover-foreground': `oklch(0.2 ${c(0.3)} ${h})`,
+      '--primary': primary,
+      '--primary-foreground': 'oklch(0.985 0 0)',
+      '--secondary': `oklch(0.93 ${c(0.15)} ${h})`,
+      '--secondary-foreground': `oklch(0.25 ${c(0.3)} ${h})`,
+      '--muted': `oklch(0.93 ${c(0.12)} ${h})`,
+      '--muted-foreground': `oklch(0.45 ${c(0.2)} ${h})`,
+      '--accent': `oklch(0.93 ${c(0.15)} ${h})`,
+      '--accent-foreground': `oklch(0.25 ${c(0.3)} ${h})`,
+      '--destructive': 'oklch(0.577 0.245 27.325)',
+      '--border': `oklch(0.88 ${c(0.15)} ${h})`,
+      '--input': `oklch(0.88 ${c(0.15)} ${h})`,
+      '--ring': primary,
+      '--sidebar': `oklch(0.96 ${c(0.12)} ${h})`,
+      '--sidebar-foreground': `oklch(0.2 ${c(0.3)} ${h})`,
+      '--sidebar-primary': primary,
+      '--sidebar-primary-foreground': 'oklch(0.985 0 0)',
+      '--sidebar-accent': `oklch(0.92 ${c(0.15)} ${h})`,
+      '--sidebar-accent-foreground': `oklch(0.25 ${c(0.3)} ${h})`,
+      '--sidebar-border': `oklch(0.88 ${c(0.15)} ${h})`,
+      '--sidebar-ring': primary,
+    },
+    dark: {
+      '--background': `oklch(0.18 ${c(0.15)} ${h})`,
+      '--foreground': `oklch(0.95 ${c(0.1)} ${h})`,
+      '--card': `oklch(0.22 ${c(0.15)} ${h})`,
+      '--card-foreground': `oklch(0.95 ${c(0.1)} ${h})`,
+      '--popover': `oklch(0.22 ${c(0.15)} ${h})`,
+      '--popover-foreground': `oklch(0.95 ${c(0.1)} ${h})`,
+      '--primary': primaryDark,
+      '--primary-foreground': `oklch(0.18 ${c(0.15)} ${h})`,
+      '--secondary': `oklch(0.26 ${c(0.15)} ${h})`,
+      '--secondary-foreground': `oklch(0.95 ${c(0.1)} ${h})`,
+      '--muted': `oklch(0.26 ${c(0.12)} ${h})`,
+      '--muted-foreground': `oklch(0.7 ${c(0.1)} ${h})`,
+      '--accent': `oklch(0.26 ${c(0.15)} ${h})`,
+      '--accent-foreground': `oklch(0.95 ${c(0.1)} ${h})`,
+      '--destructive': 'oklch(0.704 0.191 22.216)',
+      '--border': `oklch(0.3 ${c(0.15)} ${h})`,
+      '--input': `oklch(0.3 ${c(0.15)} ${h})`,
+      '--ring': primaryDark,
+      '--sidebar': `oklch(0.16 ${c(0.12)} ${h})`,
+      '--sidebar-foreground': `oklch(0.95 ${c(0.1)} ${h})`,
+      '--sidebar-primary': primaryDark,
+      '--sidebar-primary-foreground': `oklch(0.18 ${c(0.15)} ${h})`,
+      '--sidebar-accent': `oklch(0.24 ${c(0.15)} ${h})`,
+      '--sidebar-accent-foreground': `oklch(0.95 ${c(0.1)} ${h})`,
+      '--sidebar-border': `oklch(0.3 ${c(0.15)} ${h})`,
+      '--sidebar-ring': primaryDark,
+    },
+  };
+}
+
 const PRESETS: Record<ThemeColor, Preset> = {
-  teal: {
-    light: { '--primary': 'oklch(0.5 0.16 195)', '--primary-foreground': 'oklch(0.985 0 0)', '--ring': 'oklch(0.5 0.16 195)', '--sidebar-primary': 'oklch(0.5 0.16 195)', '--sidebar-primary-foreground': 'oklch(0.985 0 0)' },
-    dark: { '--primary': 'oklch(0.7 0.14 195)', '--primary-foreground': 'oklch(0.145 0 0)', '--ring': 'oklch(0.7 0.14 195)', '--sidebar-primary': 'oklch(0.7 0.14 195)', '--sidebar-primary-foreground': 'oklch(0.145 0 0)' },
-  },
-  blue: {
-    light: { '--primary': 'oklch(0.5 0.18 250)', '--primary-foreground': 'oklch(0.985 0 0)', '--ring': 'oklch(0.5 0.18 250)', '--sidebar-primary': 'oklch(0.5 0.18 250)', '--sidebar-primary-foreground': 'oklch(0.985 0 0)' },
-    dark: { '--primary': 'oklch(0.7 0.16 250)', '--primary-foreground': 'oklch(0.145 0 0)', '--ring': 'oklch(0.7 0.16 250)', '--sidebar-primary': 'oklch(0.7 0.16 250)', '--sidebar-primary-foreground': 'oklch(0.145 0 0)' },
-  },
-  violet: {
-    light: { '--primary': 'oklch(0.5 0.2 290)', '--primary-foreground': 'oklch(0.985 0 0)', '--ring': 'oklch(0.5 0.2 290)', '--sidebar-primary': 'oklch(0.5 0.2 290)', '--sidebar-primary-foreground': 'oklch(0.985 0 0)' },
-    dark: { '--primary': 'oklch(0.7 0.18 290)', '--primary-foreground': 'oklch(0.145 0 0)', '--ring': 'oklch(0.7 0.18 290)', '--sidebar-primary': 'oklch(0.7 0.18 290)', '--sidebar-primary-foreground': 'oklch(0.145 0 0)' },
-  },
-  orange: {
-    light: { '--primary': 'oklch(0.6 0.18 50)', '--primary-foreground': 'oklch(0.985 0 0)', '--ring': 'oklch(0.6 0.18 50)', '--sidebar-primary': 'oklch(0.6 0.18 50)', '--sidebar-primary-foreground': 'oklch(0.985 0 0)' },
-    dark: { '--primary': 'oklch(0.75 0.16 50)', '--primary-foreground': 'oklch(0.145 0 0)', '--ring': 'oklch(0.75 0.16 50)', '--sidebar-primary': 'oklch(0.75 0.16 50)', '--sidebar-primary-foreground': 'oklch(0.145 0 0)' },
-  },
-  rose: {
-    light: { '--primary': 'oklch(0.55 0.2 10)', '--primary-foreground': 'oklch(0.985 0 0)', '--ring': 'oklch(0.55 0.2 10)', '--sidebar-primary': 'oklch(0.55 0.2 10)', '--sidebar-primary-foreground': 'oklch(0.985 0 0)' },
-    dark: { '--primary': 'oklch(0.7 0.18 10)', '--primary-foreground': 'oklch(0.145 0 0)', '--ring': 'oklch(0.7 0.18 10)', '--sidebar-primary': 'oklch(0.7 0.18 10)', '--sidebar-primary-foreground': 'oklch(0.145 0 0)' },
-  },
-  green: {
-    light: { '--primary': 'oklch(0.5 0.16 145)', '--primary-foreground': 'oklch(0.985 0 0)', '--ring': 'oklch(0.5 0.16 145)', '--sidebar-primary': 'oklch(0.5 0.16 145)', '--sidebar-primary-foreground': 'oklch(0.985 0 0)' },
-    dark: { '--primary': 'oklch(0.7 0.14 145)', '--primary-foreground': 'oklch(0.145 0 0)', '--ring': 'oklch(0.7 0.14 145)', '--sidebar-primary': 'oklch(0.7 0.14 145)', '--sidebar-primary-foreground': 'oklch(0.145 0 0)' },
-  },
+  neutral: makePreset(240, 0.02),
+  teal: makePreset(195, 0.16),
+  blue: makePreset(250, 0.18),
+  violet: makePreset(290, 0.20),
+  orange: makePreset(50, 0.18),
+  rose: makePreset(10, 0.20),
+  green: makePreset(145, 0.16),
 };
 
 interface Ctx {
@@ -52,7 +100,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   });
   const [color, setColorState] = useState<ThemeColor>(() => {
     const stored = localStorage.getItem('theme-color');
-    return (stored as ThemeColor) || 'teal';
+    return (stored as ThemeColor) || 'neutral';
   });
 
   const setMode = (m: ThemeMode) => {
