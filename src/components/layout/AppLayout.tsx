@@ -16,8 +16,9 @@ export function AppLayout() {
   return (
     <>
       <ScrollToTop />
+      <div className="h-1 w-full bg-primary" />
       <div className="flex min-h-screen flex-col bg-background text-foreground">
-      <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
+      <header className="sticky top-0 z-40 border-b border-primary/30 bg-background/80 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-[1400px] items-center gap-3 px-4">
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
