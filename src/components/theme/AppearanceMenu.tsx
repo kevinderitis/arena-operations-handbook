@@ -7,7 +7,7 @@ import { useTheme, type ThemeColor } from './ThemeProvider';
 import { cn } from '@/lib/utils';
 
 const COLOR_HEX: Record<ThemeColor, string> = {
-  neutral: '#64748b',
+  white: '#e2e8f0',
   teal: '#0d9488',
   blue: '#2563eb',
   violet: '#7c3aed',
@@ -17,7 +17,7 @@ const COLOR_HEX: Record<ThemeColor, string> = {
 };
 
 const COLOR_NAME: Record<ThemeColor, string> = {
-  neutral: 'Default',
+  white: 'Blanco',
   teal: 'Teal',
   blue: 'Azul',
   violet: 'Violeta',
