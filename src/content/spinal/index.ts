@@ -104,10 +104,9 @@ export const spinalProcedures: Procedure[] = [
     prerequisites: ['Spinal access', "Today's reservation list"],
     introduction: 'PLACEHOLDER: Real steps to be added.',
     steps: [
-      { title: 'Open daily view', description: 'Navigate to the daily check-in/check-out view.', images: [{ src: img('daily-check-ins-check-outs', 1), alt: 'Daily view', caption: 'Screenshot pending' }] },
-      { title: 'Process check-ins', description: 'Mark arriving guests as checked in and assign rooms.', callouts: [{ type: 'important', content: 'Confirm ID and payment before check-in.' }] },
-      { title: 'Process check-outs', description: 'Mark departing guests as checked out and release rooms.' },
-      { title: 'Handle no-shows', description: 'Flag no-shows according to policy.', callouts: [{ type: 'warning', content: 'Follow no-show policy before releasing rooms.' }] },
+      { title: 'Open daily view', description: 'Open the daily check-in/check-out view from the button.', images: [{ src: img('daily-check-ins-check-outs', 1), alt: 'Daily view', caption: 'Screenshot pending' }] },
+      { title: 'Verify check-ins', description: 'Review and verify the arriving guests for the day.', images: [{ src: img('daily-check-ins-check-outs', 2), alt: 'Verify check-ins', caption: 'Screenshot pending' }], callouts: [{ type: 'important', content: 'Confirm ID and payment before check-in.' }] },
+      { title: 'Verify check-outs', description: 'Review and verify the departing guests for the day.', images: [{ src: img('daily-check-ins-check-outs', 3), alt: 'Verify check-outs', caption: 'Screenshot pending' }], callouts: [{ type: 'warning', content: 'Follow no-show policy before releasing rooms.' }] },
     ],
     checklist: [
       { id: 'c1', label: 'All arrivals processed' },
