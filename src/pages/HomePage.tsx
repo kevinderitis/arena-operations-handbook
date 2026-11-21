@@ -10,7 +10,6 @@ const dailyShortcuts = [
   'spinal-daily-checkins-checkouts',
   'fd-guest-check-in',
   'fd-guest-check-out',
-  'cl-morning-preparation',
   'spinal-importing-reservations',
 ];
 
