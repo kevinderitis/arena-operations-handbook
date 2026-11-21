@@ -18,7 +18,7 @@ export const bedlinkProcedures: Procedure[] = [
     introduction: 'PLACEHOLDER: Replace with real steps and screenshots.',
     steps: [
       { title: 'Open Bedlink reservations', description: 'Log into Bedlink and navigate to the reservations list.', images: [{ src: img('check-new-reservations', 1), alt: 'Reservations list', caption: 'Screenshot pending' }] },
-      { title: 'Filter new reservations', description: 'Filter by the most recent bookings that have not yet been imported.', callouts: [{ type: 'info', content: 'PLACEHOLDER: Confirm the exact filter with the operations manager.' }] },
+      { title: 'Filter new reservations', description: 'Filter by the most recent bookings that have not yet been imported.', images: [{ src: img('check-new-reservations', 2), alt: 'Filter new reservations', caption: 'Screenshot pending' }], callouts: [{ type: 'info', content: 'PLACEHOLDER: Confirm the exact filter with the operations manager.' }] },
       { title: 'Verify details', description: 'Check guest name, dates, room type and number of guests.', callouts: [{ type: 'important', content: 'Confirm details before importing into Spinal.' }] },
     ],
     checklist: [
