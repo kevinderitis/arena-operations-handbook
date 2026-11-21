@@ -15,16 +15,17 @@ export const inmigrationProcedures: Procedure[] = [
     difficulty: 'Intermediate',
     lastUpdated: '2026-11-21',
     prerequisites: ['Guest passport details', 'Access to the immigration system'],
-    introduction: 'PLACEHOLDER: Replace with real steps and screenshots.',
+    introduction: 'Guest arrivals must be registered with immigration through the TM30 form within the required timeframe. The passport photo is collected during check-in and sent to the immigration group.',
     steps: [
-      { title: 'Collect guest details', description: 'Gather passport and arrival information from the guest.', images: [{ src: img('tm30-guest', 1), alt: 'Guest details', caption: 'Screenshot pending' }] },
-      { title: 'Open TM30 form', description: 'Navigate to the TM30 registration screen.', images: [{ src: img('tm30-guest', 2), alt: 'TM30 form', caption: 'Screenshot pending' }] },
+      { title: 'Collect guest details', description: 'Gather passport and arrival information from the guest.', images: [{ src: img('tm30-guest', 1), alt: 'Guest details', caption: 'Collecting guest details' }] },
+      { title: 'Open TM30 form', description: 'Navigate to the TM30 registration screen.', images: [{ src: img('tm30-guest', 2), alt: 'TM30 form', caption: 'TM30 form' }] },
       { title: 'Enter and submit', description: 'Fill in the form and submit to immigration.', callouts: [{ type: 'important', content: 'Verify all details before submitting.' }] },
     ],
-    checklist: [
-      { id: 'c1', label: 'Guest details collected' },
-      { id: 'c2', label: 'TM30 submitted' },
+    notes: ['Submit within the required timeframe after guest arrival.'],
+    commonMistakes: ['Submitting with incorrect passport details.', 'Missing the submission deadline.'],
+    troubleshooting: [
+      { problem: 'Form rejected', solution: 'Check the details and resubmit.' },
     ],
-    relatedProcedures: [],
+    relatedProcedures: ['front-desk-guest-check-in'],
   },
 ];
