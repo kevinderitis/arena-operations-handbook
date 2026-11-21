@@ -41,8 +41,8 @@ export const bedlinkProcedures: Procedure[] = [
     introduction: 'PLACEHOLDER: Replace with real steps and screenshots.',
     steps: [
       { title: 'Locate the reservation', description: 'Find the reservation in Bedlink by guest name or number.', images: [{ src: img('cancel-reservations', 1), alt: 'Find reservation', caption: 'Screenshot pending' }] },
-      { title: 'Cancel in Bedlink', description: 'Apply the cancellation following Bedlink procedure.', callouts: [{ type: 'warning', content: 'Confirm cancellation policy before proceeding.' }] },
-      { title: 'Update Spinal', description: 'Mirror the cancellation status in Spinal.', images: [{ src: img('cancel-reservations', 2), alt: 'Spinal update', caption: 'Screenshot pending' }] },
+      { title: 'Cancel in Bedlink', description: 'Apply the cancellation following Bedlink procedure.', images: [{ src: img('cancel-reservations', 2), alt: 'Cancel in Bedlink', caption: 'Screenshot pending' }], callouts: [{ type: 'warning', content: 'Confirm cancellation policy before proceeding.' }] },
+      { title: 'Update Spinal', description: 'Mirror the cancellation status in Spinal.', images: [{ src: img('cancel-reservations', 3), alt: 'Spinal update', caption: 'Screenshot pending' }] },
       { title: 'Notify housekeeping', description: 'Inform cleaning staff about the freed room.' },
     ],
     checklist: [
