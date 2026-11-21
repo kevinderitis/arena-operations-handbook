@@ -84,13 +84,10 @@ export const spinalProcedures: Procedure[] = [
     steps: [
       { title: 'Locate the reservation', description: 'Find the reservation in Bedlink by guest name or number.', images: [{ src: img('extending-guest-reservations', 1), alt: 'Find reservation', caption: 'Screenshot pending' }] },
       { title: 'Update departure date', description: 'Change the check-out date to the new date and save.', callouts: [{ type: 'warning', content: 'Check room availability for the extended nights.' }] },
-      { title: 'Update Spinal', description: 'Mirror the new departure date in Spinal.', images: [{ src: img('extending-guest-reservations', 2), alt: 'Spinal update', caption: 'Screenshot pending' }] },
-      { title: 'Notify housekeeping', description: 'Inform cleaning staff about the changed turnover date.' },
     ],
     checklist: [
       { id: 'c1', label: 'Bedlink updated' },
-      { id: 'c2', label: 'Spinal updated' },
-      { id: 'c3', label: 'Housekeeping notified' },
+      { id: 'c2', label: 'Departure date updated' },
     ],
     relatedProcedures: [],
   },
