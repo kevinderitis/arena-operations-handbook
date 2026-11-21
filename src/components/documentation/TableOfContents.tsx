@@ -41,13 +41,6 @@ export function TableOfContents({ procedure }: { procedure: Procedure }) {
             </li>
           );
         })}
-        {procedure.checklist && procedure.checklist.length > 0 && (
-          <li>
-            <a href="#checklist" className="block rounded-md px-2 py-1 text-muted-foreground hover:bg-accent hover:text-foreground">
-              Completion checklist
-            </a>
-          </li>
-        )}
       </ul>
     </div>
   );

@@ -9,7 +9,6 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Step } from '@/components/documentation/Step';
 import { Callout } from '@/components/documentation/Callout';
-import { Checklist } from '@/components/documentation/Checklist';
 import { TableOfContents } from '@/components/documentation/TableOfContents';
 import { procedureById } from '@/data/procedures';
 
@@ -144,12 +143,6 @@ export default function ProcedurePage() {
                 </div>
               ))}
             </div>
-          </section>
-        )}
-
-        {procedure.checklist && procedure.checklist.length > 0 && (
-          <section className="mt-6" id="checklist">
-            <Checklist procedureId={procedure.id} items={procedure.checklist} />
           </section>
         )}
 
