@@ -47,11 +47,9 @@ export function ImageLightbox({ src, alt, caption }: Props) {
       </button>
       {caption && <figcaption className="mt-1 text-xs text-muted-foreground">{caption}</figcaption>}
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="h-[98vh] max-h-[98vh] w-[98vw] max-w-[98vw] border-0 bg-black/90 p-2 shadow-none">
-          <div className="flex h-full w-full items-center justify-center">
-            <img src={src} alt={alt} className="max-h-[95vh] max-w-[95vw] object-contain" />
-          </div>
-          {caption && <p className="mt-2 text-center text-sm text-white/80">{caption}</p>}
+        <DialogContent className="!left-0 !top-0 !h-screen !max-h-screen !w-screen !max-w-none !translate-x-0 !translate-y-0 flex items-center justify-center border-0 bg-black/90 p-4 shadow-none">
+          <img src={src} alt={alt} className="max-h-[90vh] max-w-[90vw] object-contain" />
+          {caption && <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-white/80">{caption}</p>}
         </DialogContent>
       </Dialog>
     </figure>
