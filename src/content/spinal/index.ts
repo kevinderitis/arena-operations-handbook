@@ -83,7 +83,7 @@ export const spinalProcedures: Procedure[] = [
     introduction: 'PLACEHOLDER: Real steps to be added.',
     steps: [
       { title: 'Locate the reservation', description: 'Find the reservation in Spinal by guest name or number.', images: [{ src: img('extending-guest-reservations', 1), alt: 'Find reservation', caption: 'Screenshot pending' }] },
-      { title: 'Update departure date', description: 'Change the check-out date to the new date and save.', callouts: [{ type: 'warning', content: 'Check room availability for the extended nights.' }] },
+      { title: 'Update departure date', description: 'Change the check-out date to the new date. Press the button to add the extension days, then save.', images: [{ src: img('extending-guest-reservations', 2), alt: 'Update departure date', caption: 'Screenshot pending' }], callouts: [{ type: 'warning', content: 'Check room availability for the extended nights.' }, { type: 'important', content: 'Press the button to add the extension days before saving.' }] },
     ],
     checklist: [
       { id: 'c1', label: 'Reservation located' },
