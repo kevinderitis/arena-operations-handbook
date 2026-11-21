@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { ZoomIn, ImageIcon } from 'lucide-react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { X, ZoomIn, ImageIcon } from 'lucide-react';
 
 interface Props {
   src: string;
@@ -46,12 +45,28 @@ export function ImageLightbox({ src, alt, caption }: Props) {
         </span>
       </button>
       {caption && <figcaption className="mt-1 text-xs text-muted-foreground">{caption}</figcaption>}
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="!left-0 !top-0 !h-screen !max-h-screen !w-screen !max-w-none !translate-x-0 !translate-y-0 flex items-center justify-center border-0 bg-black/90 p-4 shadow-none">
-          <img src={src} alt={alt} className="max-h-[90vh] max-w-[90vw] object-contain" />
+      {open && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          onClick={() => setOpen(false)}
+        >
+          <button
+            type="button"
+            onClick={() => setOpen(false)}
+            className="absolute right-4 top-4 z-50 rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
+            aria-label="Cerrar"
+          >
+            <X className="h-6 w-6" />
+          </button>
+          <img
+            src={src}
+            alt={alt}
+            className="max-h-[90vh] max-w-[90vw] object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
           {caption && <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-white/80">{caption}</p>}
-        </DialogContent>
-      </Dialog>
+        </div>
+      )}
     </figure>
   );
 }
