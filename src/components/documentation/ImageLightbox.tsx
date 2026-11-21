@@ -54,7 +54,7 @@ export function ImageLightbox({ src, alt, caption }: Props) {
             type="button"
             onClick={() => setOpen(false)}
             className="absolute right-4 top-4 z-50 rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
-            aria-label="Cerrar"
+            aria-label="Close"
           >
             <X className="h-6 w-6" />
           </button>

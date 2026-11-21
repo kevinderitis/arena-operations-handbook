@@ -17,7 +17,7 @@ const COLOR_HEX: Record<ThemeColor, string> = {
 };
 
 const COLOR_NAME: Record<ThemeColor, string> = {
-  white: 'Blanco',
+  white: 'White',
   teal: 'Teal',
   blue: 'Azul',
   violet: 'Violeta',
@@ -33,11 +33,11 @@ export function AppearanceMenu() {
   const handleColor = (c: ThemeColor) => {
     setColor(c);
     setOpen(false);
-    toast.success(`Color cambiado a ${COLOR_NAME[c]}`);
+    toast.success(`Color changed to ${COLOR_NAME[c]}`);
   };
   const handleMode = (m: 'light' | 'dark') => {
     setMode(m);
-    toast.success(m === 'dark' ? 'Modo oscuro activado' : 'Modo claro activado');
+    toast.success(m === 'dark' ? 'Dark mode enabled' : 'Light mode enabled');
   };
 
   return (
@@ -50,7 +50,7 @@ export function AppearanceMenu() {
       <PopoverContent className="w-56" align="end">
         <div className="space-y-3">
           <div>
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Modo</p>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Mode</p>
             <div className="flex gap-2">
               <Button
                 variant={mode === 'light' ? 'default' : 'outline'}
@@ -58,7 +58,7 @@ export function AppearanceMenu() {
                 className="flex-1"
                 onClick={() => handleMode('light')}
               >
-                <Sun className="mr-1 h-4 w-4" /> Claro
+                <Sun className="mr-1 h-4 w-4" /> Light
               </Button>
               <Button
                 variant={mode === 'dark' ? 'default' : 'outline'}
@@ -66,12 +66,12 @@ export function AppearanceMenu() {
                 className="flex-1"
                 onClick={() => handleMode('dark')}
               >
-                <Moon className="mr-1 h-4 w-4" /> Oscuro
+                <Moon className="mr-1 h-4 w-4" /> Dark
               </Button>
             </div>
           </div>
           <div>
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Color de acento</p>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Accent color</p>
             <div className="grid grid-cols-6 gap-2">
               {colors.map((c) => (
                 <button
@@ -88,7 +88,7 @@ export function AppearanceMenu() {
                 />
               ))}
             </div>
-            <p className="mt-2 text-xs text-muted-foreground">Actual: {COLOR_NAME[color]}</p>
+            <p className="mt-2 text-xs text-muted-foreground">Current: {COLOR_NAME[color]}</p>
           </div>
         </div>
       </PopoverContent>
