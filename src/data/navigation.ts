@@ -48,7 +48,6 @@ export const navigation: NavGroup[] = [
     title: 'SPINAL',
     department: 'spinal',
     items: [
-      { id: 'spinal-dashboard-overview', title: 'Spinal dashboard overview', slug: 'spinal-dashboard-overview', department: 'spinal' },
       { id: 'spinal-importing-reservations', title: 'Importing reservations into Spinal', slug: 'importing-reservations-into-spinal', department: 'spinal' },
       { id: 'spinal-extending-reservations', title: 'Extending guest reservations', slug: 'extending-guest-reservations', department: 'spinal' },
       { id: 'spinal-daily-checkins-checkouts', title: 'Managing Daily Check-ins & Check-outs', slug: 'daily-check-ins-check-outs', department: 'spinal' },

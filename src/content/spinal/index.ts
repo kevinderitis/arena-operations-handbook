@@ -5,26 +5,6 @@ const img = (slug: string, n: number) =>
 
 export const spinalProcedures: Procedure[] = [
   {
-    id: 'spinal-dashboard-overview',
-    slug: 'spinal-dashboard-overview',
-    department: 'spinal',
-    title: 'Spinal dashboard overview',
-    description: 'Get familiar with the Spinal dashboard layout, widgets and daily views.',
-    keywords: ['spinal', 'dashboard', 'overview'],
-    estimatedDuration: '10 min',
-    difficulty: 'Beginner',
-    lastUpdated: '2026-11-16',
-    prerequisites: ['Spinal login credentials.'],
-    introduction: 'PLACEHOLDER: Replace with annotated screenshots of the dashboard.',
-    steps: [
-      { title: 'Log in to Spinal', description: 'Open Spinal and sign in with your credentials.', images: [{ src: img('spinal-dashboard-overview', 1), alt: 'Login', caption: 'Screenshot pending' }] },
-      { title: 'Review main sections', description: 'Identify the sidebar, daily view, filters and reservation panels.' },
-      { title: 'Understand status indicators', description: 'Learn the color codes and icons used for reservation status.', callouts: [{ type: 'info', content: 'PLACEHOLDER: Add legend of status colors.' }] },
-    ],
-    checklist: [{ id: 'c1', label: 'Dashboard sections identified' }],
-    relatedProcedures: [],
-  },
-  {
     id: 'spinal-importing-reservations',
     slug: 'importing-reservations-into-spinal',
     department: 'spinal',
