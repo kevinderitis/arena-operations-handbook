@@ -48,7 +48,7 @@ export const frontDeskProcedures: Procedure[] = [
     introduction: 'PLACEHOLDER: Real steps to be added.',
     steps: [
       { title: 'Confirm departure', description: 'Verify the guest is checking out and the date.', images: [{ src: img('guest-check-out-early-check-out', 1), alt: 'Check-out', caption: 'Screenshot pending' }] },
-      { title: 'Settle outstanding charges', description: 'Check and settle any outstanding balances, and also review the comments left in the customer profile.', callouts: [{ type: 'important', content: 'Confirm all charges and customer comments before closing.' }] },
+      { title: 'Settle outstanding charges', description: 'Check and settle any outstanding balances, and also review the comments left in the customer profile.', images: [{ src: img('guest-check-out-early-check-out', 2), alt: 'Settle outstanding charges', caption: 'Screenshot pending' }], callouts: [{ type: 'important', content: 'Confirm all charges and customer comments before closing.' }] },
       { title: 'Collect key', description: 'Retrieve the room key/card.' },
       { title: 'Mark checked out in Spinal', description: 'Update the reservation status.', images: [{ src: img('guest-check-out-early-check-out', 2), alt: 'Status update', caption: 'Screenshot pending' }] },
       { title: 'Notify housekeeping', description: 'Trigger room cleaning turnover.' },
