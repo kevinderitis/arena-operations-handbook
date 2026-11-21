@@ -23,6 +23,13 @@ export const departments: DepartmentMeta[] = [
     icon: 'ConciergeBell',
   },
   {
+    id: 'inmigration',
+    label: 'INMIGRATION',
+    path: 'inmigration',
+    description: 'Immigration procedures and guest registration.',
+    icon: 'FileText',
+  },
+  {
     id: 'cleaning',
     label: 'CLEANING',
     path: 'cleaning',
@@ -37,9 +44,10 @@ export const navigation: NavGroup[] = [
     title: 'BEDLINK',
     department: 'bedlink',
     items: [
-      { id: 'bedlink-checking-reservations', title: 'Checking reservations', slug: 'checking-reservations', department: 'bedlink' },
-      { id: 'bedlink-checking-room-rates', title: 'Checking room rates', slug: 'checking-room-rates', department: 'bedlink' },
+      { id: 'bedlink-check-new-reservations', title: 'Check new reservations', slug: 'check-new-reservations', department: 'bedlink' },
+      { id: 'bedlink-cancel-reservations', title: 'Cancel reservations', slug: 'cancel-reservations', department: 'bedlink' },
       { id: 'bedlink-responding-guest-messages', title: 'Responding to guest messages', slug: 'responding-to-guest-messages', department: 'bedlink' },
+      { id: 'bedlink-check-room-rates-availability', title: 'Check room rates and availability', slug: 'check-room-rates-and-availability', department: 'bedlink' },
     ],
   },
   {
@@ -66,6 +74,14 @@ export const navigation: NavGroup[] = [
       { id: 'fd-renting-motorbikes', title: 'Renting motorbikes to guests', slug: 'renting-motorbikes-to-guests', department: 'front-desk' },
       { id: 'fd-managing-payment-cards', title: 'Managing payment cards', slug: 'managing-payment-cards', department: 'front-desk' },
       { id: 'fd-purchase-vouchers-cash', title: 'Managing purchase vouchers and cash', slug: 'managing-purchase-vouchers-cash', department: 'front-desk' },
+    ],
+  },
+  {
+    id: 'inmigration',
+    title: 'INMIGRATION',
+    department: 'inmigration',
+    items: [
+      { id: 'inm-tm30-guest', title: 'TM30 guest', slug: 'tm30-guest', department: 'inmigration' },
     ],
   },
   {

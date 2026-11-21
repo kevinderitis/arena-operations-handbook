@@ -2,6 +2,7 @@ import { bedlinkProcedures } from '../content/bedlink';
 import { spinalProcedures } from '../content/spinal';
 import { frontDeskProcedures } from '../content/front-desk';
 import { cleaningProcedures } from '../content/cleaning';
+import { inmigrationProcedures } from '../content/inmigration';
 import type { Procedure } from '../types/documentation';
 
 export const procedures: Procedure[] = [
@@ -9,6 +10,7 @@ export const procedures: Procedure[] = [
   ...spinalProcedures,
   ...frontDeskProcedures,
   ...cleaningProcedures,
+  ...inmigrationProcedures,
 ];
 
 export const procedureById = (id: string) => procedures.find((p) => p.id === id);

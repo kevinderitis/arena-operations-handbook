@@ -1,4 +1,4 @@
-export type DepartmentId = 'bedlink' | 'spinal' | 'front-desk' | 'cleaning';
+export type DepartmentId = 'bedlink' | 'spinal' | 'front-desk' | 'cleaning' | 'inmigration';
 
 export interface DepartmentMeta {
   id: DepartmentId;
