@@ -59,7 +59,6 @@ export const navigation: NavGroup[] = [
       { id: 'spinal-importing-reservations', title: 'Importing reservations into Spinal', slug: 'importing-reservations-into-spinal', department: 'spinal' },
       { id: 'spinal-extending-reservations', title: 'Extending guest reservations', slug: 'extending-guest-reservations', department: 'spinal' },
       { id: 'spinal-daily-checkins-checkouts', title: 'Managing Daily Check-ins & Check-outs', slug: 'daily-check-ins-check-outs', department: 'spinal' },
-      { id: 'spinal-managing-views', title: 'Managing Views & Reservation Filters', slug: 'managing-views-reservation-filters', department: 'spinal' },
     ],
   },
   {

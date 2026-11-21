@@ -17,10 +17,13 @@ export const frontDeskProcedures: Procedure[] = [
     prerequisites: ['Reservation in Spinal', 'Available clean room', 'ID/passport'],
     introduction: 'PLACEHOLDER: Real steps to be added.',
     steps: [
-      { title: 'Greet and verify reservation', description: 'Welcome the guest and locate their reservation.', images: [{ src: img('guest-check-in', 1), alt: 'Reservation lookup', caption: 'Screenshot pending' }] },
-      { title: 'Collect ID and details', description: 'Record passport/ID and contact information.', callouts: [{ type: 'important', content: 'Verify identity matches the reservation.' }] },
-      { title: 'Assign room and hand over key', description: 'Assign a clean, ready room and provide the key/card.', images: [{ src: img('guest-check-in', 2), alt: 'Room assignment', caption: 'Screenshot pending' }] },
-      { title: 'Collect payment if due', description: 'Process any outstanding payment or deposit.' },
+      { title: 'Check in en Spinal', description: 'Perform the check-in in Spinal, either by importing a reservation from Bedlink or creating one from scratch for a walk-in guest without a reservation.', callouts: [{ type: 'important', content: 'Verify the reservation exists or create it before proceeding.' }] },
+      { title: 'Solicitar pasaporte y tomar foto', description: 'Request the guest\'s passport and take a photo where all details are clearly visible.' },
+      { title: 'Enviar foto al grupo de inmigracion', description: 'Send the passport photo to the immigration WhatsApp group.' },
+      { title: 'Firmar contrato', description: 'Have the guest sign the contract.' },
+      { title: 'Cobrar al cliente', description: 'Collect payment from the guest for the stay.' },
+      { title: 'Solicitar deposito', description: 'Request the deposit, which can be 1000 baht or the passport.' },
+      { title: 'Guardar contrato y deposito', description: 'Store the contract and deposit together in the drawer corresponding to the room number, kept in order.' },
       { title: 'Explain facilities', description: 'Briefly explain hostel rules, breakfast and amenities.' },
     ],
     checklist: [
